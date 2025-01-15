@@ -4,7 +4,11 @@ FROM golang:1.23-alpine
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy the source code into the container
+# Copy only the Go module files first
+COPY go.mod .
+RUN go mod download
+
+# Copy the application code
 COPY main.go .
 
 # Build the service
