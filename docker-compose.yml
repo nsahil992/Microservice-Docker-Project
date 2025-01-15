@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8081:8081"
+  payment-service:
+    build: ./payment-service
+    ports:
+      - "8082:8082"
+  streaming-service:
+    build: ./streaming-service
+    ports:
+      - "8083:8083"
+
